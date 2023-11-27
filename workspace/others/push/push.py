@@ -6,7 +6,7 @@ message = MyNow()
 from modules.MyGit import MyGit
 MyGit.add(message)
 MyGit.commit(message)
-MyGit.push(message)
+# MyGit.push(message)
 from modules.MyClose import MyClose
 # MyClose.ScrollBar()
 MyClose.CollapseFolders()
