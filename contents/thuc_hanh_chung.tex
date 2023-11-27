@@ -1,25 +1,20 @@
 \newpage
 \section{Thực hành chung}
 \subsection{Yêu cầu}
-% INPUT
-% OUTPUT
+\begin{block}{Yêu cầu}
+    Thực hiện phép nhân ma trận với vector.
 
+    \textbf{INPUT:}
+    \begin{itemize}
+        \item Ma trận  có \(m\) hàng và \(n\) cột.
+        \item Vector   có \(n\) phần tử.
+    \end{itemize}
 
-
-\begin{block}{Yêu cầu}  
-Thực hiện phép nhân ma trận với vector.
-
-\textbf{INPUT:}  
-\begin{itemize}
-\item Ma trận  có \(m\) hàng và \(n\) cột. 
-\item Vector   có \(n\) phần tử.  
-\end{itemize}
-
-\textbf{OUTPUT:}  
-\begin{itemize}
-\item Vector  kết quả của phép nhân ma trận  với vector.
-\end{itemize}
-\end{block} 
+    \textbf{OUTPUT:}
+    \begin{itemize}
+        \item Vector  kết quả của phép nhân ma trận  với vector.
+    \end{itemize}
+\end{block}
 
 \subsection{Cơ sở toán học}
 Phép nhân ma trận với vector là một phép toán phổ biến trong đại số tuyến tính.
@@ -29,9 +24,9 @@ Công thức tính toán như sau:
 
 Trong đó:
 \begin{itemize}
- \item Với \( A \) là ma trận có kích thước \( m \times n \).
- \item Với \( \mathbf{v} \) là vector có kích thước \( n \times 1 \).
- \item Với \( \mathbf{w} \) là vector kết quả có kích thước \( m \times 1 \).
+    \item Với \( A \) là ma trận có kích thước \( m \times n \).
+    \item Với \( \mathbf{v} \) là vector có kích thước \( n \times 1 \).
+    \item Với \( \mathbf{w} \) là vector kết quả có kích thước \( m \times 1 \).
 \end{itemize}
 
 Để tính giá trị của \( \mathbf{w} \), thực hiện các phép nhân và cộng tương ứng:
@@ -39,9 +34,9 @@ Trong đó:
 
 Trong đó:
 \begin{itemize}
- \item Với \( A_{ij} \) là phần tử ở hàng \( i \), cột \( j \) của ma trận \( A \).
- \item Với \( v_j \) là phần tử thứ \( j \) của vector \( \mathbf{v} \).
- \item Với \( \mathbf{w}_i \) là phần tử thứ \( i \) của vector kết quả \( \mathbf{w} \).
+    \item Với \( A_{ij} \) là phần tử ở hàng \( i \), cột \( j \) của ma trận \( A \).
+    \item Với \( v_j \) là phần tử thứ \( j \) của vector \( \mathbf{v} \).
+    \item Với \( \mathbf{w}_i \) là phần tử thứ \( i \) của vector kết quả \( \mathbf{w} \).
 \end{itemize}
 
 \textbf{Ví dụ:}
@@ -71,56 +66,58 @@ Do đó, vector kết quả \( \mathbf{w} \) là:
 
 \subsubsection{Mã nguồn lập trình tuần tự phép nhân ma trận với vector}
 \begin{listing}[H]
- \centering
- \inputminted{cpp}{sources/MaNguon1TT.cpp}
- \caption{Mã nguồn lập trình tuần tự phép nhân ma trận với vector}
- \label{code:MaNguon1TT}
+    \centering
+    \inputminted{cpp}{sources/MaNguon1TT.cpp}
+    \caption{Mã nguồn lập trình tuần tự phép nhân ma trận với vector}
+    \label{code:MaNguon1TT}
 \end{listing}
 
 \subsubsection{Mã nguồn lập trình song song phép nhân ma trận với vector}
 \begin{listing}[H]
- \centering
- \inputminted{cpp}{sources/MaNguon1SS.cpp}
- \caption{Mã nguồn lập trình song song phép nhân ma trận với vector}
- \label{code:MaNguon1SS}
-\end{listing} 
+    \centering
+    \inputminted{cpp}{sources/MaNguon1SS.cpp}
+    \caption{Mã nguồn lập trình song song phép nhân ma trận với vector}
+    \label{code:MaNguon1SS}
+\end{listing}
 \newpage
 \subsection{Kết quả:}
 \subsubsection{Bảng kết quả phép nhân ma trận với vector}
 
 
-
-
- 
-\begin{table}[h] %!nghia
- \centering
- \begin{tabular}{|c|c|c|c|}
- 
- \hline
- \multicolumn{3}{|c|}{\textbf{BẢNG KẾT QUẢ}} \\ 
- \hline
- \textbf{Kích thước} & \textbf{Thời gian lập trình tuần tự} & \textbf{Thời gian lập trình song song} \\ \hline
- 11111111111111111 & 11111111111111111 & 11111111111111111 \\ \hline
- 11111111111111111 & 11111111111111111 & 11111111111111111 \\ \hline
- 11111111111111111 & 11111111111111111 & 11111111111111111 \\ \hline
- \end{tabular}
-
- \caption{ViDuBangThuong} %!nghia
+\begin{table}[H]
+    \centering
+    \rotatebox{90}{
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            \multicolumn{14}{|c|}{\textbf{BẢNG KẾT QUẢ}}                                                                      \\
+            \hline
+            \textbf{Kích thước} & \textbf{Thời gian} & \multicolumn{2}{|c|}{\textbf{Song song 2 luồng}}   & \multicolumn{2}{|c|}{\textbf{Song song 3 luồng}} & \multicolumn{2}{|c|}{\textbf{Song song 4 luồng}} & \multicolumn{2}{|c|}{\textbf{Song song 5 luồng}} & \multicolumn{2}{|c|}{\textbf{Song song 4 luồng}} & \multicolumn{2}{|c|}{\textbf{Song song 5 luồng}} \\
+            \cline{3-14}
+                                & \textbf{tuần tự}   & \textbf{Thời gian}                               & \textbf{Hiệu suất} & \textbf{Thời gian}                               & \textbf{Hiệu suất} & \textbf{Thời gian}                               & \textbf{Hiệu suất} & \textbf{Thời gian}                               & \textbf{Hiệu suất}  & \textbf{Thời gian}                               & \textbf{Hiệu suất}  & \textbf{Thời gian}                               & \textbf{Hiệu suất} \\
+            \hline
+            11                  & 112                & 113                                              & 113                & 113                                              & 113                & 113                                              & 113                & 113                                              & 113         & 113                                              & 113         & 113                                              & 113                \\
+            \hline
+        \end{tabular}
+    }
+    \caption{Rotated Table}
  \label{table:nghia1} %!nghia
- \end{table} 
- 
- 
- 
+\end{table}
+
+  
+
+
+
+\newpage
 \subsubsection{Biểu đồ phép nhân ma trận với vector}
 
- 
+
 \begin{figure}[h] %!nghia
- \centering
- \includegraphics[width=1\textwidth]{pictures/image.png} %!nghia
- \caption{ViDuHinhAnhTheoChieuNgang} %!nghia
- \label{pictures:nghia12} %!nghia
- \end{figure} 
- 
+    \centering
+    \includegraphics[width=1\textwidth]{pictures/image.png} %!nghia
+    \caption{ViDuHinhAnhTheoChieuNgang} %!nghia
+    \label{pictures:nghia12} %!nghia
+\end{figure}
+
 
 \subsection{Nhận xét}
 \lipsum[1]
