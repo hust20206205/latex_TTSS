@@ -1,0 +1,78 @@
+% \documentclass{article}
+\documentclass[twoside]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{start/init} 
+% \usepackage{microtype}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[mathscr]{eucal}
+\usepackage{amsmath, amsthm, amssymb,amsxtra,latexsym,amscd,graphics,graphpap, makeidx, tikz, color}
+\usepackage{diagbox}
+\usepackage{indentfirst}
+\usepackage{rotating}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{arydshln}
+\usepackage{graphicx}
+\usepackage{amsbsy}
+\usepackage{array}
+\usepackage{epsfig}
+\usepackage{natbib}
+\usepackage{arydshln}
+
+%\theorembodyfont{\slshape}
+\theoremstyle{plain}
+\newtheorem{definition}{Định nghĩa}[section]
+\newtheorem{proposition}{Mệnh đề}[section]
+\newtheorem{theorem}{Định lý}[section]
+\newtheorem{lemma}{Bổ đề}[section]
+\newtheorem{corollary}{Hệ quả}[section]
+\newtheorem{conjecture}{Dự đoán}[section]
+\newtheorem{remark}{Chú ý}[section]
+
+\renewcommand{\thedefinition}{\arabic{section}.\arabic{definition}}
+\renewcommand{\thelemma}{\arabic{section}.\arabic{lemma}}
+\renewcommand{\thetheorem}{\arabic{section}.\arabic{theorem}}
+\renewcommand{\thecorollary}{\arabic{section}.\arabic{corollary}}
+% 
+\renewcommand{\theequation}{\thesection.\arabic{equation}} % Định dạng lại số công thức
+\numberwithin{equation}{section} % Đánh số công thức theo section
+
+% Sử dụng gói caption để tùy chỉnh caption
+\usepackage{caption}%* caption
+% Sử dụng gói listing để hiển thị mã nguồn
+\usepackage{listing}
+\renewcommand*{\listlistingname}{Danh sách mã nguồn}
+\DeclareCaptionLabelFormat{code_caption}{{Mã nguồn #2}}
+\captionsetup[listing]{labelformat=code_caption}
+
+% Sử dụng gói minted để đính kèm và định dạng mã nguồn
+\usepackage{minted} 
+\definecolor{BackgroundCode}{RGB}{242,242,235}
+\setminted{
+fontsize=\footnotesize, % Cỡ chữ cho mã nguồn
+frame=lines, % Hiển thị đường viền xung quanh mã nguồn
+framesep=2mm, % Khoảng cách giữa đường viền và nội dung mã nguồn
+bgcolor=BackgroundCode, % Màu nền cho mã nguồn
+% linenos, % Hiển thị số dòng ở bên trái
+autogobble, % Tự động loại bỏ khoảng trắng ở đầu mỗi dòng
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\include{contents/trang_bia}
+\tableofcontents
+\include{contents/bang_danh_gia_thanh_vien}
+\include{contents/danh_sach}
+\include{contents/loi_mo_dau}
+\include{contents/gioi_thieu_chung}
+% \include{contents/a}
+\include{contents/thuc_hanh_chung}
+\include{contents/thuc_hanh_nhom}
+\include{contents/ket_luan}
+\include{contents/tai_lieu_tham_khao}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\end{document}
+
