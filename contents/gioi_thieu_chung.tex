@@ -5,46 +5,70 @@ Lập trình đa luồng là một phương pháp lập trình trong đó một 
 
 OpenMP (Open Multi-Processing) là một giao diện lập trình ứng dụng   hỗ trợ lập trình đa xử lý bộ nhớ dùng chung đa nền tảng trong C , C++ và Fortran.
 
-OpenMP được thiết kế cho các máy đa bộ xử lý/lõi, bộ nhớ dùng chung. Kiến trúc cơ bản có thể là bộ nhớ chia sẻ UMA hoặc NUMA.
+OpenMP được thiết kế cho các máy đa bộ xử lý, bộ nhớ dùng chung. Kiến trúc cơ bản có thể là bộ nhớ chia sẻ UMA hoặc NUMA.           Chia sẻ bộ nhớ     trong đó nhiều luồng có thể truy cập cùng một không gian bộ nhớ chung.  
 
-\begin{figure}[h] %!nghia
+\begin{figure}[h]         
     \centering
-    \includegraphics[width=1\textwidth]{pictures/image.png} %!nghia
-    \caption{ViDuHinhAnhTheoChieuNgang} %!nghia
-    \label{pictures:nghia12} %!nghia
+    \includegraphics[width=1\textwidth]{pictures/000.png}         
+    \caption{ViDuHinhAnhTheoChieuNgang}         
+    \label{pictures:000}         
+    \end{figure} 
+    
+    
+    
+OpenMP sử dụng mô hình fork-join để thực thi song song:
+ 
+\begin{figure}[h]         
+    \centering
+    \includegraphics[width=1\textwidth]{pictures/Fork-Join-model-WebSite-4.png}         
+    \caption{ViDuHinhAnhTheoChieuNgang}         
+    \label{pictures:0001}         
     \end{figure} 
 
 
-% Fork-Join
-% Share memory
+
+Tất cả các chương trình OpenMP đều bắt đầu dưới dạng một tiến trình duy nhất: luồng chính . Luồng chính thực thi tuần tự cho đến khi gặp cấu trúc vùng song song đầu tiên.
+
+
  
+\textbf{FORK:}   luồng chính sau đó tạo ra một nhóm các luồng song song .
 
+Sau đó, các câu lệnh trong chương trình được bao quanh bởi cấu trúc vùng song song sẽ được thực thi song song giữa các luồng nhóm khác nhau.
 
-% #### 2.1 Fork-Join Model
-% Mô hình Fork-Join là mô hình cơ bản trong lập trình song song, trong đó một quá trình "cha" tạo ra các quá trình "con" để thực hiện các công việc con. Sau khi các công việc con kết thúc, chúng hợp nhất lại với quá trình cha. OpenMP sử dụng mô hình này để tận dụng hiệu suất từ việc chia nhỏ công việc.
+\textbf{JOIN:}         Khi các luồng của nhóm hoàn thành các câu lệnh trong cấu trúc vùng song song, chúng sẽ đồng bộ hóa và chấm dứt, chỉ để lại luồng chính.
 
-
-% #### 2.3 Share Memory
-% Chia sẻ bộ nhớ là khái niệm trong lập trình song song, trong đó nhiều luồng có thể truy cập cùng một không gian bộ nhớ chung. Trong OpenMP, bộ nhớ chia sẻ giúp các luồng truy cập và cập nhật dữ liệu mà không cần sự sao chép dữ liệu giữa chúng, tăng hiệu suất chương trình.
  
  
  
-
-% OpenMP là một công cụ mạnh mẽ cho lập trình song song, sử dụng mô hình Fork-Join, đa luồng, và chia sẻ bộ nhớ để tối ưu hóa hiệu suất ứng dụng trên các hệ thống có nhiều lõi CPU.  
+ 
+\newpage
 \subsection{Công thức tính hiệu suất}
 
 
-Công thức tính hiệu suất:
-\begin{equation}
- \text{{Hiệu suất}} = \frac{{\text{{time1}}}}{{\text{{time2}}}} \div \text{{thread}}
-\end{equation}
+Công thức tính hiệu suất trong bài báo cáo: 
+ 
 
-
+\[\text{{Hiệu suất}} = \frac{{\text{{Thời gian tuần tự}}}}{{\text{{Thời gian song song}} \times \text{{Số luồng}}}}\]
+ 
+ 
 \subsection{Thông tin về máy tính và phần mềm}
 
 
-
-
- 
- 
- 
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Thông Tin CPU} & Intel(R) Core(TM) i5-9300H CPU @ 2.40GHz \\
+        \hline
+        \textbf{Thông Tin RAM} & 16.0 GB \\
+        \hline
+        \textbf{Hệ Điều Hành} & Windows 11 \\
+        \hline
+        \textbf{Ngôn Ngữ Lập Trình} & C, C++ \\
+        \hline
+        \textbf{Trình Biên Dịch} & g++ \\
+        \hline
+    \end{tabular}
+    \caption{Thông Tin Hệ Thống}
+    \label{table:system-info}
+\end{table}
