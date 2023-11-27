@@ -1,67 +1,35 @@
 \newpage
 \section{Giới thiệu chung}
 \subsection{Giới thiệu chung về OpenMP}
+Lập trình đa luồng là một phương pháp lập trình trong đó một chương trình có khả năng thực hiện nhiều công việc đồng thời, mỗi công việc được thực hiện trong một luồng riêng biệt.
 
-OpenMP
+OpenMP (Open Multi-Processing) là một giao diện lập trình ứng dụng   hỗ trợ lập trình đa xử lý bộ nhớ dùng chung đa nền tảng trong C , C++ và Fortran.
 
-Fork-Join
-Đa luồng 
-Share memory
+
+% OpenMP (Open Multi-Processing) là một tiêu chuẩn lập trình song song cho các ứng dụng đa nhiệm trên các máy tính có nhiều lõi (multicore). Nó cung cấp một cách dễ sử dụng để chia nhỏ công việc thành các nhiệm vụ con để chạy song song trên nhiều lõi xử lý.
+
+
+
+% Fork-Join
+% Đa luồng 
+% Share memory
 % Lập trình đa luồng
 
 
-% **Báo Cáo về OpenMP và Các Khái Niệm Cơ Bản: Fork-Join, Đa Luồng, và Share Memory**
+ 
 
-% ### 1. Giới Thiệu
-
-% #### 1.1 OpenMP
-% OpenMP (Open Multi-Processing) là một tiêu chuẩn lập trình song song cho các ứng dụng đa nhiệm trên các máy tính có nhiều lõi (multicore). Nó cung cấp một cách dễ sử dụng để chia nhỏ công việc thành các nhiệm vụ con để chạy song song trên nhiều lõi xử lý.
-
-% ### 2. Các Khái Niệm Cơ Bản
 
 % #### 2.1 Fork-Join Model
 % Mô hình Fork-Join là mô hình cơ bản trong lập trình song song, trong đó một quá trình "cha" tạo ra các quá trình "con" để thực hiện các công việc con. Sau khi các công việc con kết thúc, chúng hợp nhất lại với quá trình cha. OpenMP sử dụng mô hình này để tận dụng hiệu suất từ việc chia nhỏ công việc.
 
-% #### 2.2 Đa Luồng
-% Đa luồng (multithreading) là khái niệm mà một ứng dụng được thiết kế để chia nhỏ thành các luồng độc lập, mỗi luồng thực hiện một nhiệm vụ riêng biệt. Trong OpenMP, đa luồng giúp tận dụng tối đa tài nguyên hệ thống bằng cách thực hiện nhiều nhiệm vụ song song trên nhiều lõi CPU.
 
 % #### 2.3 Share Memory
 % Chia sẻ bộ nhớ là khái niệm trong lập trình song song, trong đó nhiều luồng có thể truy cập cùng một không gian bộ nhớ chung. Trong OpenMP, bộ nhớ chia sẻ giúp các luồng truy cập và cập nhật dữ liệu mà không cần sự sao chép dữ liệu giữa chúng, tăng hiệu suất chương trình.
+ 
+ 
+ 
 
-% ### 3. OpenMP và Hiệu Suất
-
-% #### 3.1 Tăng Tốc Đa Nhiệm
-% OpenMP giúp tăng tốc độ thực thi của ứng dụng bằng cách tận dụng sức mạnh của nhiều lõi CPU. Các khối mã được đánh dấu bằng chỉ thị OpenMP có thể được thực thi song song, cải thiện thời gian chạy tổng thể.
-
-% #### 3.2 Quản Lý Bộ Nhớ Hiệu Quả
-% Chia sẻ bộ nhớ trong OpenMP giúp giảm overhead do không phải sao chép dữ liệu giữa các luồng. Điều này giúp tránh tình trạng cạnh tranh về bộ nhớ và tối ưu hóa hiệu suất.
-
-% ### 4. Ví Dụ Thực Hành
-
-% ```c
-% #include <omp.h>
-% #include <stdio.h>
-
-% int main() {
-% int n = 1000;
-% int sum = 0;
-
-% #pragma omp parallel for reduction(+:sum)
-% for (int i = 0; i < n; i++) {
-% sum += i;
-%}
-
-% printf("Tong tu 0 den %d la %d\n", n, sum);
-
-% return 0;
-%}
-% ```
-
-% Trong ví dụ trên, `#pragma omp parallel for` tạo ra một khối mã có thể chạy song song trên nhiều luồng. `reduction(+:sum)` giúp tổng hợp giá trị của biến `sum` từ các luồng con thành giá trị duy nhất.
-
-% ### 5. Kết Luận
-
-% OpenMP là một công cụ mạnh mẽ cho lập trình song song, sử dụng mô hình Fork-Join, đa luồng, và chia sẻ bộ nhớ để tối ưu hóa hiệu suất ứng dụng trên các hệ thống có nhiều lõi CPU. Việc hiểu rõ các khái niệm cơ bản như Fork-Join, đa luồng và chia sẻ bộ nhớ là quan trọng để tirnhcày tận dụng toàn bộ tiềm năng của OpenMP.
+% OpenMP là một công cụ mạnh mẽ cho lập trình song song, sử dụng mô hình Fork-Join, đa luồng, và chia sẻ bộ nhớ để tối ưu hóa hiệu suất ứng dụng trên các hệ thống có nhiều lõi CPU.  
 \subsection{Công thức tính hiệu suất}
 
 
